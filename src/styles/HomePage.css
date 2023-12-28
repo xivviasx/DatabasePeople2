@@ -1,0 +1,26 @@
+/* App.css (lub dowolny plik CSS) */
+.container{
+    margin-left: 30%;
+    margin-bottom: 20px;
+}
+.crud {
+    width: 60%;
+    display: flex;
+    margin-top: 20px;
+    justify-content: flex-end;
+}
+
+.crud button {
+    margin-left: 20px;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #4caf50; /* Zielony kolor tła */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.crud button:hover {
+    background-color: #45a049; /* Ciemniejszy zielony kolor tła po najechaniu myszką */
+}
