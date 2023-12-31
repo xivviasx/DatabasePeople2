@@ -1,16 +1,24 @@
-/* App.css (lub dowolny plik CSS) */
-.container{
-    margin-left: 30%;
+/* App.css */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 20px;
 }
-.crud {
-    width: 60%;
+.main{
+    width:60%;
+}
+
+.table-container{
+    margin-bottom: 20px;
+}
+.button-container {
     display: flex;
     margin-top: 20px;
     justify-content: flex-end;
 }
 
-.crud button {
+.button-container button {
     margin-left: 20px;
     padding: 10px;
     font-size: 14px;
@@ -21,6 +29,6 @@
     cursor: pointer;
 }
 
-.crud button:hover {
+.button-container button:hover {
     background-color: #45a049; /* Ciemniejszy zielony kolor tła po najechaniu myszką */
 }

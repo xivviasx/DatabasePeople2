@@ -4,46 +4,60 @@ import OsobaTable from './tables/OsobaTable';
 import AdresTable from "./tables/AdresTable";
 import NumerTelefonuTable from "./tables/NumerTelefonuTable";
 import PracaTable from "./tables/PracaTable";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import '../styles/HomePage.css';
 
 function HomePage() {
-
     const navigate = useNavigate();
 
     const handleButtonClick = (tableName) => {
         navigate(`/${tableName}`);
     };
 
-
     return (
         <div className="container">
+            <div className="main">
             <h1>Baza danych</h1>
-            <div>
+
+            <div className="table-container">
+                <h2>Osoba</h2>
                 <OsobaTable />
-                <div className="crud">
-                    <button onClick={() => handleButtonClick('dodaj-osobe')}>Dodaj Osobe</button>
-                    <button onClick={() => handleButtonClick('usun-osobe')}>Usuń Osobe</button>
-                    <button onClick={() => handleButtonClick('edytuj-osobe')}>Edytuj Osobe</button>
+                <div className="button-container">
+                    <button onClick={() => handleButtonClick('dodaj-osobe')}>Dodaj Osobę</button>
+                    <button onClick={() => handleButtonClick('usun-osobe')}>Usuń Osobę</button>
+                    <button onClick={() => handleButtonClick('edytuj-osobe')}>Edytuj Osobę</button>
                 </div>
             </div>
-            <AdresTable />
-            <div className="crud">
-                <button onClick={() => handleButtonClick('dodaj-osobe')}>Dodaj Osobe</button>
-                <button onClick={() => handleButtonClick('usun-adres')}>Usuń Adres</button>
-                <button onClick={() => handleButtonClick('edytuj-osobe')}>Edytuj Osobe</button>
+
+            <div className="table-container">
+                <h2>Adres</h2>
+                <AdresTable />
+                <div className="button-container">
+                    <button onClick={() => handleButtonClick('dodaj-adres')}>Dodaj Adres</button>
+                    <button onClick={() => handleButtonClick('usun-adres')}>Usuń Adres</button>
+                    <button onClick={() => handleButtonClick('edytuj-adres')}>Edytuj Adres</button>
+                </div>
             </div>
-            <NumerTelefonuTable />
-            <div className="crud">
-                <button onClick={() => handleButtonClick('dodaj-osobe')}>Dodaj Osobe</button>
-                <button onClick={() => handleButtonClick('usun-osobe')}>Usuń Osobe</button>
-                <button onClick={() => handleButtonClick('edytuj-osobe')}>Edytuj Osobe</button>
+
+            <div className="table-container">
+                <h2>Numer Telefonu</h2>
+                <NumerTelefonuTable />
+                <div className="button-container">
+                    <button onClick={() => handleButtonClick('dodaj-numer')}>Dodaj Numer</button>
+                    <button onClick={() => handleButtonClick('usun-numer')}>Usuń Numer</button>
+                    <button onClick={() => handleButtonClick('edytuj-numer')}>Edytuj Numer</button>
+                </div>
             </div>
-            <PracaTable />
-            <div className="crud">
-                <button onClick={() => handleButtonClick('dodaj-osobe')}>Dodaj Osobe</button>
-                <button onClick={() => handleButtonClick('usun-osobe')}>Usuń Osobe</button>
-                <button onClick={() => handleButtonClick('edytuj-osobe')}>Edytuj Osobe</button>
+
+            <div className="table-container">
+                <h2>Praca</h2>
+                <PracaTable />
+                <div className="button-container">
+                    <button onClick={() => handleButtonClick('dodaj-prace')}>Dodaj Pracę</button>
+                    <button onClick={() => handleButtonClick('usun-prace')}>Usuń Pracę</button>
+                    <button onClick={() => handleButtonClick('edytuj-prace')}>Edytuj Pracę</button>
+                </div>
+            </div>
             </div>
         </div>
     );

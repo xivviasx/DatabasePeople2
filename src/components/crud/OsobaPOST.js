@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import '../../styles/Curd.css';
+
 
 const OsobaPOST = ({ onOsobaDodana }) => {
     const [imie, setImie] = useState('');
