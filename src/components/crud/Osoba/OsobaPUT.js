@@ -7,10 +7,9 @@ const OsobaPUT = () => {
     const [imie, setImie] = useState('');
     const [nazwisko, setNazwisko] = useState('');
     const [dataUrodzenia, setDataUrodzenia] = useState('');
-    const [numerTelefonu, setNumerTelefonu] = useState('');
-    const [ulica, setUlica] = useState('');
-    const [miasto, setMiasto] = useState('');
-    const [nazwaStanowiska, setNazwaStanowiska] = useState('');
+    const [idNumerTelefonu, setIdNumerTelefonu] = useState('');
+    const [idAdres, setIdAdres] = useState('');
+    const [idPraca, setIdPraca] = useState('');
 
     const navigate = useNavigate();
 
@@ -21,30 +20,37 @@ const OsobaPUT = () => {
             imie: imie || undefined,
             nazwisko: nazwisko || undefined,
             dataUrodzenia: dataUrodzenia || undefined,
-            numerTelefonu: numerTelefonu
+            numerTelefonu: idNumerTelefonu
                 ? {
-                    id: 4,
-                    numer: numerTelefonu,
+                    id: idNumerTelefonu || undefined,
                 }
                 : undefined,
-            adres: ulica || miasto ? { id: 2, ulica: ulica, miasto: miasto } : undefined,
-            praca: nazwaStanowiska ? { id: 4, nazwaStanowiska: nazwaStanowiska } : undefined,
+            adres: idAdres
+                ? {
+                    id: idAdres || undefined,
+                }
+                : undefined,
+            praca: idPraca
+                ? {
+                    id: idPraca || undefined,
+                }
+                : undefined,
         };
 
         try {
-            // Wysyłanie żądania PUT z użyciem axios
+            // Sending a PUT request using axios
             await axios.put(`http://localhost:8080/osoba/${osobaId}`, zaktualizowanaOsoba);
-            // Przeniesienie do HomePage po zaktualizowaniu osoby
+            // Redirect to HomePage after updating the person
             navigate('/home');
         } catch (error) {
-            console.error('Błąd podczas wysyłania żądania PUT:', error);
+            console.error('Error while sending PUT request:', error);
         }
     };
 
     return (
         <form className="curd" onSubmit={handleUpdate} style={{ marginLeft: '20px' }}>
             <label>
-                ID Osoby:
+                Osoba ID:
                 <input type="text" value={osobaId} onChange={(e) => setOsobaId(e.target.value)} />
             </label>
             <br />
@@ -64,26 +70,21 @@ const OsobaPUT = () => {
             </label>
             <br />
             <label>
-                Numer telefonu:
-                <input type="text" value={numerTelefonu} onChange={(e) => setNumerTelefonu(e.target.value)} />
+                ID numeru telefonu:
+                <input type="text" value={idNumerTelefonu} onChange={(e) => setIdNumerTelefonu(e.target.value)} />
             </label>
             <br />
             <label>
-                Ulica:
-                <input type="text" value={ulica} onChange={(e) => setUlica(e.target.value)} />
+                ID Adresu:
+                <input type="text" value={idAdres} onChange={(e) => setIdAdres(e.target.value)} />
             </label>
             <br />
             <label>
-                Miasto:
-                <input type="text" value={miasto} onChange={(e) => setMiasto(e.target.value)} />
+                ID Pracy:
+                <input type="text" value={idPraca} onChange={(e) => setIdPraca(e.target.value)} />
             </label>
             <br />
-            <label>
-                Nazwa stanowiska:
-                <input type="text" value={nazwaStanowiska} onChange={(e) => setNazwaStanowiska(e.target.value)} />
-            </label>
-            <br />
-            <button type="submit">Zaktualizuj Osobę</button>
+            <button type="submit">Zaktualizuj osobę</button>
         </form>
     );
 };

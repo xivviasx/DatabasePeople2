@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import '../../styles/Curd.css';
+import '../../../styles/Curd.css';
 
 const OsobaDELETE = () => {
     const [osobaId, setOsobaId] = useState('');

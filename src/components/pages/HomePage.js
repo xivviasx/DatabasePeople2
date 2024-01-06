@@ -1,11 +1,11 @@
 // HomePage.js
 import React from 'react';
-import OsobaTable from './tables/OsobaTable';
-import AdresTable from "./tables/AdresTable";
-import NumerTelefonuTable from "./tables/NumerTelefonuTable";
-import PracaTable from "./tables/PracaTable";
+import OsobaTable from '../tables/OsobaTable';
+import AdresTable from "../tables/AdresTable";
+import NumerTelefonuTable from "../tables/NumerTelefonuTable";
+import PracaTable from "../tables/PracaTable";
 import { useNavigate } from "react-router-dom";
-import '../styles/HomePage.css';
+import '../../styles/HomePage.css';
 
 function HomePage() {
     const navigate = useNavigate();
