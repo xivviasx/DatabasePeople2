@@ -17,3 +17,12 @@
 .table-row:hover {
     background-color: #ffffff;
 }
+
+.pagination{
+    display: flex;
+    justify-content: right;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+
+

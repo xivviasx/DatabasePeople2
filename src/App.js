@@ -11,7 +11,7 @@ import AdresPUT from "./components/crud/adres/AdresPUT";
 import PracaPUT from "./components/crud/praca/PracaPUT";
 import PracaDELETE from "./components/crud/praca/PracaDELETE";
 import PracaPOST from "./components/crud/praca/PracaPOST";
-import NumerTelefonuPUT from "./components/crud/numerTelefonu/NumerTelefonuPIUT";
+import NumerTelefonuPUT from "./components/crud/numerTelefonu/NumerTelefonuPUT";
 import NumerTelefonuDELETE from "./components/crud/numerTelefonu/NumerTelefonuDELETE";
 import NumerTelefonuPOST from "./components/crud/numerTelefonu/NumerTelefonuPOST";
 

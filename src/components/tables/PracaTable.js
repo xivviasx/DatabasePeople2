@@ -3,7 +3,9 @@ import axios from 'axios';
 import '../../styles/Table.css';
 
 const PracaTable = () => {
-    const [prace, setPrace] = useState([]); //zmienna hook przechowuje adresy aktualizowana funkcja setadres
+    const [prace, setPrace] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [itemsPerPage] = useState(2); // Ilość elementów na stronie
     const [error, setError] = useState(false);
 
     useEffect(() => {
@@ -11,6 +13,14 @@ const PracaTable = () => {
             .then(response => setPrace(response.data))
             .catch(() => setError(true));
     }, []);
+
+    // Oblicz indeksy pierwszego i ostatniego elementu dla aktualnej strony
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = prace.slice(indexOfFirstItem, indexOfLastItem);
+
+    // Paginacja - zmiana aktualnej strony
+    const paginate = pageNumber => setCurrentPage(pageNumber);
 
     return (
         <div>
@@ -22,7 +32,7 @@ const PracaTable = () => {
                 </tr>
                 </thead>
                 <tbody>
-                {prace.map(praca => (
+                {currentItems.map(praca => (
                     <tr key={praca.id} className="table-row">
                         <td>{praca.id}</td>
                         <td>{praca.nazwaStanowiska}</td>
@@ -30,6 +40,13 @@ const PracaTable = () => {
                 ))}
                 </tbody>
             </table>
+
+            {/* Paginacja */}
+            <div className="pagination">
+                {Array.from({ length: Math.ceil(prace.length / itemsPerPage) }, (_, index) => (
+                    <button key={index} onClick={() => paginate(index + 1)}>{index + 1}</button>
+                ))}
+            </div>
         </div>
     );
 };

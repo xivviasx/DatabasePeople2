@@ -3,7 +3,9 @@ import axios from 'axios';
 import '../../styles/Table.css';
 
 const AdresTable = () => {
-    const [adresy, setAdres] = useState([]); //zmienna hook przechowuje adresy aktualizowana funkcja setadres
+    const [adresy, setAdres] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [itemsPerPage] = useState(2);
     const [error, setError] = useState(false);
 
     useEffect(() => {
@@ -11,6 +13,12 @@ const AdresTable = () => {
             .then(response => setAdres(response.data))
             .catch(() => setError(true));
     }, []);
+
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = adresy.slice(indexOfFirstItem, indexOfLastItem);
+
+    const paginate = pageNumber => setCurrentPage(pageNumber);
 
     return (
         <div>
@@ -23,7 +31,7 @@ const AdresTable = () => {
                 </tr>
                 </thead>
                 <tbody>
-                {adresy.map(adres => (
+                {currentItems.map(adres => (
                     <tr key={adres.id} className="table-row">
                         <td>{adres.id}</td>
                         <td>{adres.ulica}</td>
@@ -32,6 +40,14 @@ const AdresTable = () => {
                 ))}
                 </tbody>
             </table>
+
+            <div className="pagination">
+                {Array.from({ length: Math.ceil(adresy.length / itemsPerPage) }).map((_, index) => (
+                    <button key={index + 1} onClick={() => paginate(index + 1)}>
+                        {index + 1}
+                    </button>
+                ))}
+            </div>
         </div>
     );
 };

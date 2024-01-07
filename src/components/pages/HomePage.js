@@ -43,9 +43,9 @@ function HomePage() {
                 <h2>Numer Telefonu</h2>
                 <NumerTelefonuTable />
                 <div className="button-container">
-                    <button onClick={() => handleButtonClick('dodaj-numer')}>Dodaj Numer</button>
-                    <button onClick={() => handleButtonClick('usun-numer')}>Usuń Numer</button>
-                    <button onClick={() => handleButtonClick('edytuj-numer')}>Edytuj Numer</button>
+                    <button onClick={() => handleButtonClick('dodaj-numer-telefonu')}>Dodaj Numer</button>
+                    <button onClick={() => handleButtonClick('usun-numer-telefonu')}>Usuń Numer</button>
+                    <button onClick={() => handleButtonClick('edytuj-numer-telefonu')}>Edytuj Numer</button>
                 </div>
             </div>
 
