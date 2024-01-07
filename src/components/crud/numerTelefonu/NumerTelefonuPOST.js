@@ -29,14 +29,18 @@ const NumerTelefonuPOST = () => {
     };
 
     return (
-        <form className="curd" onSubmit={handleSubmit} style={{ marginLeft: '20px' }}>
+        <div className="curd-container">
+        <form className="curd" onSubmit={handleSubmit} >
             <label>
                 Numer telefonu:
                 <input type="text" value={numer} onChange={(e) => setNumer(e.target.value)} />
             </label>
             <br />
+            <div className="button-container">
             <button type="submit">Dodaj numer telefonu</button>
+            </div>
         </form>
+        </div>
     );
 };
 

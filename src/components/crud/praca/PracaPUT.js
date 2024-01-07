@@ -26,19 +26,23 @@ const PracaPUT = () => {
     };
 
     return (
-        <form className="curd" onSubmit={handleUpdate} style={{ marginLeft: '20px' }}>
-            <label>
-                ID Pracy:
-                <input type="text" value={pracaId} onChange={(e) => setPracaId(e.target.value)} />
-            </label>
-            <br />
-            <label>
-                Nazwa stanowiska:
-                <input type="text" value={nazwaStanowiska} onChange={(e) => setNazwaStanowiska(e.target.value)} />
-            </label>
-            <br />
-            <button type="submit">Zaktualizuj pracę</button>
-        </form>
+        <div className="curd-container">
+            <form className="curd" onSubmit={handleUpdate} style={{ marginLeft: '20px' }}>
+                <label>
+                    ID Pracy:
+                    <input type="text" value={pracaId} onChange={(e) => setPracaId(e.target.value)} />
+                </label>
+                <br />
+                <label>
+                    Nazwa stanowiska:
+                    <input type="text" value={nazwaStanowiska} onChange={(e) => setNazwaStanowiska(e.target.value)} />
+                </label>
+                <br />
+                <div className="button-container">
+                <button type="submit">Zaktualizuj pracę</button>
+                </div>
+            </form>
+        </div>
     );
 };
 

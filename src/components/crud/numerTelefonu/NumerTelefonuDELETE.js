@@ -18,14 +18,18 @@ const NumerTelefonuDELETE = () => {
     };
 
     return (
+        <div className="curd-container">
         <form className="curd" onSubmit={(e) => e.preventDefault()}>
             <label>
                 ID Numeru telefonu:
                 <input type="text" value={numerTelefonuId} onChange={(e) => setNumerTelefonuId(e.target.value)} />
             </label>
             <br />
+            <div className="button-container">
             <button type="button" onClick={handleDelete}>Usuń numer telefonu</button>
+            </div>
         </form>
+        </div>
     );
 };
 

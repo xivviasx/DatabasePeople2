@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+
 const PracaPOST = () => {
     const [nazwaStanowiska, setNazwaStanowiska] = useState('');
 
@@ -28,14 +29,18 @@ const PracaPOST = () => {
     };
 
     return (
+        <div className="curd-container">
         <form className="curd" onSubmit={handleSubmit} style={{ marginLeft: '20px' }}>
             <label>
                 Nazwa stanowiska:
                 <input type="text" value={nazwaStanowiska} onChange={(e) => setNazwaStanowiska(e.target.value)} />
             </label>
             <br />
+            <div className="button-container">
             <button type="submit">Dodaj pracę</button>
+            </div>
         </form>
+        </div>
     );
 };
 

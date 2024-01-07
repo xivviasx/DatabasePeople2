@@ -18,14 +18,18 @@ const PracaDELETE = () => {
     };
 
     return (
+        <div className="curd-container">
         <form className="curd" onSubmit={(e) => e.preventDefault()}>
             <label>
                 ID Pracy:
                 <input type="text" value={pracaId} onChange={(e) => setPracaId(e.target.value)} />
             </label>
             <br />
+            <div className="button-container">
             <button type="button" onClick={handleDelete}>Usuń pracę</button>
+            </div>
         </form>
+        </div>
     );
 };
 

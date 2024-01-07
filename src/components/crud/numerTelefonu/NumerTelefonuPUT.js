@@ -26,6 +26,7 @@ const NumerTelefonuPUT = () => {
     };
 
     return (
+        <div className="curd-container">
         <form className="curd" onSubmit={handleUpdate} style={{ marginLeft: '20px' }}>
             <label>
                 ID Numeru telefonu:
@@ -37,8 +38,11 @@ const NumerTelefonuPUT = () => {
                 <input type="text" value={numer} onChange={(e) => setNumer(e.target.value)} />
             </label>
             <br />
+            <div className="button-container">
             <button type="submit">Zaktualizuj numer telefonu</button>
+            </div>
         </form>
+        </div>
     );
 };
 

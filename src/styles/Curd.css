@@ -1,21 +1,29 @@
-/* AdresDELETE.css (lub dowolny plik CSS) */
+
+.curd-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
 .curd {
-    margin-left: 20px;
-    width: 500px;
+    background-color: seashell;
+    padding: 20px;
+    border-color: #e8dfd5;
+    border-width: 2px;
+    border-style: solid;
 }
 
 
 .curd input {
     padding: 8px;
     margin: 10px;
-
 }
 
 .curd button {
     padding: 10px;
     font-size: 14px;
-    background-color: #4caf50; /* Czerwony kolor tła */
+    background-color: #4caf50;
     color: white;
     border: none;
     border-radius: 4px;
@@ -24,4 +32,19 @@
 
 .curd button:hover {
     background-color: #45a049; /* Ciemniejszy czerwony kolor tła po najechaniu myszką */
+}
+
+.button-container button {
+    margin-left: 20px;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #4caf50; /* Zielony kolor tła */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button-container button:hover {
+    background-color: #45a049; /* Ciemniejszy zielony kolor tła po najechaniu myszką */
 }
