@@ -19,6 +19,7 @@ const OsobaDELETE = () => {
     };
 
     return (
+        <div className="curd-container">
         <form className="curd" onSubmit={(e) => e.preventDefault()} >
             {/* Pole tekstowe do wprowadzenia ID osoby */}
             <label>
@@ -26,9 +27,11 @@ const OsobaDELETE = () => {
                 <input type="text" value={osobaId} onChange={(e) => setOsobaId(e.target.value)} />
             </label>
             <br />
-            {/* Przycisk do usuwania osoby */}
+            <div className="button-container">
             <button type="button" onClick={handleDelete}>Usuń Osobę</button>
+            </div>
         </form>
+        </div>
     );
 };
 

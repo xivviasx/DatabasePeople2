@@ -41,6 +41,7 @@ const AdresPOST = () => {
     };
 
     return (
+        <div className="curd-container">
         <form className="curd" onSubmit={handleSubmit} style={{ marginLeft: '20px' }}>
             <label>
                 Ulica:
@@ -52,8 +53,11 @@ const AdresPOST = () => {
                 <input type="text" name="miasto" value={adresData.miasto} onChange={handleInputChange} />
             </label>
             <br />
+            <div className="button-container">
             <button type="submit">Dodaj Adres</button>
+            </div>
         </form>
+        </div>
     );
 };
 

@@ -48,6 +48,7 @@ const OsobaPUT = () => {
     };
 
     return (
+        <div className="curd-container">
         <form className="curd" onSubmit={handleUpdate} style={{ marginLeft: '20px' }}>
             <label>
                 Osoba ID:
@@ -84,8 +85,11 @@ const OsobaPUT = () => {
                 <input type="text" value={idPraca} onChange={(e) => setIdPraca(e.target.value)} />
             </label>
             <br />
+            <div className="button-container">
             <button type="submit">Zaktualizuj osobę</button>
+            </div>
         </form>
+        </div>
     );
 };
 

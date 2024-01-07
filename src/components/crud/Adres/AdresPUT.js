@@ -27,6 +27,7 @@ const AdresPUT = () => {
     };
 
     return (
+        <div className="curd-container">
         <form className="curd" onSubmit={handleUpdate} style={{ marginLeft: '20px' }}>
             <label>
                 Adres ID:
@@ -43,8 +44,12 @@ const AdresPUT = () => {
                 <input type="text" value={miasto} onChange={(e) => setMiasto(e.target.value)} />
             </label>
             <br />
+            <div className="button-container">
             <button type="submit">Zaktualizuj adres</button>
+            </div>
         </form>
+        </div>
+
     );
 };
 

@@ -60,6 +60,7 @@ const OsobaPOST = ({ onOsobaDodana }) => {
     };
 
     return (
+        <div className="curd-container">
         <form className="curd" onSubmit={handleSubmit} style={{ marginLeft: '20px' }}>
             <label>
                 Imię:
@@ -91,8 +92,11 @@ const OsobaPOST = ({ onOsobaDodana }) => {
                 <input type="text" name="idPraca" value={osobaData.idPraca} onChange={handleInputChange} />
             </label>
             <br />
-            <button type="submit">Dodaj Osobę</button>
+            <div className="button-container">
+                <button type="submit">Dodaj Osobę</button>
+            </div>
         </form>
+        </div>
     );
 };
 

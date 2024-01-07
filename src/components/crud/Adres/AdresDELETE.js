@@ -19,6 +19,7 @@ const AdresDELETE = () => {
     };
 
     return (
+        <div className="curd-container">
         <form className="curd" onSubmit={(e) => e.preventDefault()}>
             {/* Text field for entering the address ID */}
             <label>
@@ -26,9 +27,11 @@ const AdresDELETE = () => {
                 <input type="text" value={adresId} onChange={(e) => setAdresId(e.target.value)} />
             </label>
             <br />
-            {/* Button to delete the address */}
+            <div className="button-container">
             <button type="button" onClick={handleDelete}>Usuń Adres</button>
+            </div>
         </form>
+        </div>
     );
 };
 
