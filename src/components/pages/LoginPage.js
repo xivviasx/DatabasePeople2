@@ -1,49 +1,40 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import GoogleLogin from 'react-google-login';
 
 const LoginPage = () => {
-    const [loggedInUser, setLoggedInUser] = useState(null);
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    const responseGoogle = (response) => {
-        console.log('Google authentication response:', response);
-
-        // Handle the Google authentication response
-        if (response.profileObj) {
-            setLoggedInUser({
-                id: response.profileObj.googleId,
-                name: response.profileObj.name,
-                email: response.profileObj.email,
-                imageUrl: response.profileObj.imageUrl,
+    const handleLogin = async () => {
+        try {
+            const response = await axios.post('http://localhost:8080/api/login/authenticate', {
+                username: username,
+                password: password,
             });
 
-            // Redirect to "/home" after successful login
-            console.log('Redirecting to /home');
+            console.log(response.data); // Reakcja serwera na poprawne uwierzytelnienie
+
+            // Po poprawnym uwierzytelnieniu, przekieruj do strony "/home"
             navigate('/home');
+        } catch (error) {
+            console.error('Błąd podczas logowania:', error);
         }
     };
 
-
     return (
         <div>
-            {!loggedInUser ? (
-                <>
-                    <h2>Login Page</h2>
-                    <GoogleLogin
-                        clientId="1047474511535-ctvg6lhqbhsi41ugrmddmi6r4799v905.apps.googleusercontent.com"
-                        buttonText="Login with Google"
-                        onSuccess={responseGoogle}
-                        onFailure={responseGoogle}
-                        cookiePolicy={'single_host_origin'}
-                    />
-                </>
-            ) : (
-                <div>
-                    <h2>Welcome, {loggedInUser.name}!</h2>
-                    {/* Redirect or show some content for authenticated users */}
-                </div>
-            )}
+            <h2>Login Page</h2>
+            <div>
+                <label>Username:</label>
+                <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+            </div>
+            <div>
+                <label>Password:</label>
+                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            </div>
+            <button onClick={handleLogin}>Login</button>
         </div>
     );
 };

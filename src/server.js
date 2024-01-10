@@ -3,11 +3,16 @@ const cors = require('cors');
 const app = express();
 const PORT = 5000;
 
+// Dodaj ten middleware przed definicją tras
+app.use((req, res, next) => {
+    res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
+    next();
+});
+
 app.use(cors({
     origin: 'http://localhost:3000', // Zastąp swoim pochodzeniem aplikacji React
     credentials: true,
 }));
-
 
 app.post('/google-auth', (req, res) => {
     // Handle Google authentication on the server side

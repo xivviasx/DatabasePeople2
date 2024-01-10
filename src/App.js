@@ -39,8 +39,10 @@ function App() {
                 <Route path="/usun-numer-telefonu" element={<NumerTelefonuDELETE />} />
                 <Route path="/edytuj-numer-telefonu" element={<NumerTelefonuPUT />} />
 
-                {/* Dodaj poniższą trasę, aby przenosić użytkownika do /home po zalogowaniu */}
+                {/* Dodaj poniższą trasę, aby przenosić użytkownika do /home po zalogowaniu
                 <Route path="/*" element={<Navigate to="/home" />} />
+                */}
+
             </Routes>
         </Router>
     );
