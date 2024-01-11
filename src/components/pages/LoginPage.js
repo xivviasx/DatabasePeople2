@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const LoginPage = ({ handleLogin }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [type, setType] = useState('');
     const navigate = useNavigate();
 
     const handleLoginClick = async () => {
@@ -15,16 +16,18 @@ const LoginPage = ({ handleLogin }) => {
                 password: password,
             });
 
-            console.log(response.data);
-            handleLogin();
+            const userType = response.data; // lub response.data.userType w zależności od struktury odpowiedzi
+
+            console.log(userType);
+            handleLogin(userType);
             navigate('/home');
         } catch (error) {
             console.error('Błąd podczas logowania:', error);
         }
     };
 
+
     const handleRegisterClick = () => {
-        // Przenieś użytkownika do strony rejestracji po kliknięciu przycisku "Zarejestruj"
         navigate('/register');
     };
 
