@@ -15,7 +15,7 @@ import NumerTelefonuPUT from "./crud/numerTelefonu/NumerTelefonuPUT";
 import NumerTelefonuDELETE from "./crud/numerTelefonu/NumerTelefonuDELETE";
 import NumerTelefonuPOST from "./crud/numerTelefonu/NumerTelefonuPOST";
 import RegisterPage from "./pages/Rejestracja";
-import HomePageUser from "./pages/HimePageUser";
+import HomePageUser from "./pages/HomePageUser";
 
 function App() {
     const [authenticated, setAuthenticated] = useState(false);
