@@ -50,7 +50,7 @@ const RegisterPage = ({ handleLogin }) => {
                     <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                 </div>
                 <div className="button-container">
-                    <button onClick={handleRegister}>Register</button>
+                    <button onClick={handleRegister}>Utwórz</button>
                 </div>
             </div>
         </div>

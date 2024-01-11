@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import LoginPage from "./components/pages/LoginPage";
-import HomePage from "./components/pages/HomePage";
-import OsobaPOST from "./components/crud/osoba/OsobaPOST";
-import OsobaDELETE from "./components/crud/osoba/OsobaDELETE";
-import OsobaPUT from "./components/crud/osoba/OsobaPUT";
-import AdresDELETE from "./components/crud/adres/AdresDELETE";
-import AdresPOST from "./components/crud/adres/AdresPOST";
-import AdresPUT from "./components/crud/adres/AdresPUT";
-import PracaPUT from "./components/crud/praca/PracaPUT";
-import PracaDELETE from "./components/crud/praca/PracaDELETE";
-import PracaPOST from "./components/crud/praca/PracaPOST";
-import NumerTelefonuPUT from "./components/crud/numerTelefonu/NumerTelefonuPUT";
-import NumerTelefonuDELETE from "./components/crud/numerTelefonu/NumerTelefonuDELETE";
-import NumerTelefonuPOST from "./components/crud/numerTelefonu/NumerTelefonuPOST";
-import RegisterPage from "./components/pages/Rejestracja";
+import LoginPage from "./pages/LoginPage";
+import HomePage from "./pages/HomePage";
+import OsobaPOST from "./crud/osoba/OsobaPOST";
+import OsobaDELETE from "./crud/osoba/OsobaDELETE";
+import OsobaPUT from "./crud/osoba/OsobaPUT";
+import AdresDELETE from "./crud/adres/AdresDELETE";
+import AdresPOST from "./crud/adres/AdresPOST";
+import AdresPUT from "./crud/adres/AdresPUT";
+import PracaPUT from "./crud/praca/PracaPUT";
+import PracaDELETE from "./crud/praca/PracaDELETE";
+import PracaPOST from "./crud/praca/PracaPOST";
+import NumerTelefonuPUT from "./crud/numerTelefonu/NumerTelefonuPUT";
+import NumerTelefonuDELETE from "./crud/numerTelefonu/NumerTelefonuDELETE";
+import NumerTelefonuPOST from "./crud/numerTelefonu/NumerTelefonuPOST";
+import RegisterPage from "./pages/Rejestracja";
 
 function App() {
     const [authenticated, setAuthenticated] = useState(false);
